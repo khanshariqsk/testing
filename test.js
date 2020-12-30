@@ -1,9 +1,7 @@
 function test(cb) {
 	setTimeout(()=>{
-		cb("data")
+		return "data";
 	},4000)
 }
 
-test((data)=>{
-	console.log(data)
-})
+console.log(test())
