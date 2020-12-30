@@ -1,7 +1,16 @@
-function test(cb) {
-	setTimeout(()=>{
-		return "data";
-	},4000)
+function test() {
+	return new Promise((resolve,reject)=>{
+		setTimeout(()=>resolve("data"),4000)
+	})
 }
 
-console.log(test())
+async function asy(){
+	try{
+		const data = await test()
+		console.log(data)
+	}
+	catch(error){
+		console.log(error)
+	}
+}
+asy()
