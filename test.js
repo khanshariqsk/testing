@@ -1,11 +1,9 @@
-const events = require('events')
-const eventEmiiter = new events.EventEmitter()
+function test() {
+	return new Promise((resolve,reject)=>{
+		setTimeout(()=>resolve("data"),4000)
+	})
+}
 
-eventEmiiter.on('scream',function(){
-    // setTimeout(()=>{console.log("IM here")},2000)
-    for(i=1;i<20;i++){
-        console.log("event forloop")
-    }
-})
-eventEmiiter.emit('scream')
-console.log("Im crossed")
+test()
+.then(console.log)
+.catch(console.log)
